@@ -6,6 +6,7 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
        $name = trim($_POST['speakerName']);
        $rank = trim($_POST['speakerRanks']);
        $penary = trim($_POST['speakerSession']);
+       $profile = trim($_POST['profile_text']);
        
        
         //get and save speakers images
@@ -33,7 +34,7 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
 //            echo "There was an error uploading the file, please try again!";
 //        }
          
-       if($db->query("INSERT INTO speakers VALUES('','$name','$target_path','$penary','$rank','0')"))
+       if($db->query("INSERT INTO speakers VALUES('','$name','$target_path','$penary','$rank',,'0')"))
        {
           echo "Success"; 
        }
@@ -53,7 +54,7 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
         <input type="text" name="speakerName" placeholder="Name"/><br>
         <input type="text" name="speakerRanks" placeholder="Credentials"/><br>
         <input type="text" name="speakerSession" placeholder="Plenary"/><br>
-        <textarea cols="20" rows="4" name="profile_text" placeholder="Profile Text"></textarea><br>
+        <textarea cols="30" rows="10" name="profile_text" placeholder="Profile Text"></textarea><br>
         <input type="file" name="uploadedfile"/><br>
             <input type="submit" name="image" title="Upload" /><br>
         </form>
