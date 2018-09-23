@@ -9,10 +9,10 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
        
        
         //get and save speakers images
-      $errors= array();
-      $file_name = $_FILES['image']['name'];
-      $file_size =$_FILES['image']['size'];
-      $file_tmp =$_FILES['image']['tmp_name'];
+//      $errors= array();
+//      $file_name = $_FILES['image']['name'];
+//      $file_size =$_FILES['image']['size'];
+//      $file_tmp =$_FILES['image']['tmp_name'];
       //$file_type=$_FILES['image']['type'];
      // $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
       
@@ -24,10 +24,10 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
       
       if(empty($errors)==true){
           $target_path = "images/";
-         $target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
+         $target_path = $target_path . basename( $_FILES['image']['name']); 
 
-        if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
-            echo "The file ".  basename( $_FILES['uploadedfile']['name']). 
+        if(move_uploaded_file($_FILES['image']['tmp_name'], $target_path)) {
+            echo "The file ".  basename( $_FILES['image']['name']). 
             " has been uploaded";
         } else{
             echo "There was an error uploading the file, please try again!";
@@ -49,7 +49,7 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
         <input type="text" name="speakerSession" placeholder="Plenary"/><br>
         <textarea cols="20" rows="4" name="profile_text" placeholder="Profile Text"></textarea><br>
         <input type="file" name="uploadedfile"/><br>
-            <input type="submit" name="uploadSpeaker" title="Upload" /><br>
+            <input type="submit" name="image" title="Upload" /><br>
         </form>
     </body>
 </html>
