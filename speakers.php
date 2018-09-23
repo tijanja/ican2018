@@ -18,9 +18,9 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
       
 
       
-      if($file_size > 2097152){
-         $errors[]='File size must be excately 2 MB';
-      }
+//      if($file_size > 2097152){
+//         $errors[]='File size must be excately 2 MB';
+//      }
       
       if(empty($errors)==true){
           $target_path = "images/";
@@ -33,7 +33,7 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
             echo "There was an error uploading the file, please try again!";
         }
          
-       $db->query("INSERT INTO speakers VALUES('','$name','$file_name','$penary','$rank','0')");
+       $db->query("INSERT INTO speakers VALUES('','$name','$target_path','$penary','$rank','0')");
          echo "Success";
       }else{
          print_r($errors);
