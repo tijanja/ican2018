@@ -2,7 +2,7 @@
 include_once 'model/Connection.php';
 $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
 
-    if(isset($_POST['uploadSpeaker'])){
+    if(isset($_POST['image'])){
         
        echo $name = trim($_POST['speakerName'])."<br>";
        echo $rank = trim($_POST['speakerRanks'])."<br>";
