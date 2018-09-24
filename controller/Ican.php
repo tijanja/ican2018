@@ -44,6 +44,12 @@ class ICAN {
         $speakers = new Speaker();
         return $speakers->getAllSpeakers();
     }
+    
+    function getSponsorsAction()
+    {
+        $speakers = new Speaker();
+        return $speakers->getAllSponsors();
+    }
             
     function rateingAction()
     {
