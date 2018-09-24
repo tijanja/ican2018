@@ -6,7 +6,7 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
        $name = trim($_POST['speakerName']);
        $rank = trim($_POST['speakerRanks']);
        $penary = trim($_POST['speakerSession']);
-       $profile = addslashes(trim($_POST['profile_text']));
+       $profile = trim($_POST['profile_text']);
        
        
         //get and save speakers images
