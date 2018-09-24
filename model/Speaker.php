@@ -20,16 +20,23 @@ class Speaker extends Connection {
     function getAllSpeakers()
     {
         $result = $this->db->query("SELECT * FROM speakers;");
-        if($result->num_rows>0)
-            {
-               $obj = $result->fetch_object();
-               $return_res["action"] = TRUE;
-               $return_res['data']=$obj;
-               return $return_res; 
-            }
-           else
-               {
-                    return "{'action':false}";
-               }
+        while($row = $result->fetch_assoc())
+        {
+            $speaker[] = array($row);
+        }
+        
+        return $speaker;
+        
+//        if($result->num_rows>0)
+//            {
+//               $obj = $result->fetch_object();
+//               $return_res["action"] = TRUE;
+//               $return_res['data']=$obj;
+//               return $return_res; 
+//            }
+//           else
+//               {
+//                    return "{'action':false}";
+//               }
     }
 }
