@@ -1,6 +1,7 @@
 <?php
 include_once 'model/Connection.php';
 $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
+
     if(isset($_POST['uploadSpeaker'])){
         
        echo $name = trim($_POST['speakerName'])."<br>";
@@ -33,19 +34,19 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
 //        } else{
 //            echo "There was an error uploading the file, please try again!";
 //        }
+         echo "9999999";
+      }else{
+         echo "not submit";
          
-       if($db->query("INSERT INTO speakers VALUES('','$name','$target_path','$penary','$rank',$profile,0)"))
+      }
+      
+      if($db->query("INSERT INTO speakers VALUES('','$name','$target_path','$penary','$rank',$profile,0)"))
        {
           echo "Success"; 
        }
  else {
            echo $db->error." errors";
        }
-         echo "9999999";
-      }else{
-         echo "not submit";
-         
-      }
    }
 ?>
 
