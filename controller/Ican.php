@@ -39,6 +39,12 @@ class ICAN {
          return $scoreBoard->share($this->_params);
     }
     
+    function getSpeakersAction()
+    {
+        $speakers = new Speaker();
+        return $speakers->getAllSpeakers();
+    }
+            
     function rateingAction()
     {
         
