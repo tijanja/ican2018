@@ -22,7 +22,7 @@ class Speaker extends Connection {
         $result = $this->db->query("SELECT * FROM speakers;");
         while($row = $result->fetch_assoc())
         {
-            $speaker[] = array($row);
+            $speaker[] = $row;
         }
         
         return $speaker;
