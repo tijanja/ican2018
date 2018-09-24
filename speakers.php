@@ -7,7 +7,7 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
        echo $name = trim($_POST['speakerName']);
        echo $rank = trim($_POST['speakerRanks']);
        echo $penary = trim($_POST['speakerSession']);
-       echo $profile = mysqli_real_escape_string(trim($_POST['profile_text']));
+       echo $profile = mysqli_real_escape_string($db,trim($_POST['profile_text']));
        
        
        
