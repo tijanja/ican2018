@@ -4,10 +4,10 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
 
     if(isset($_POST['image'])){
         
-       echo $name = trim($_POST['speakerName'])."<br>";
-       echo $rank = trim($_POST['speakerRanks'])."<br>";
-       echo $penary = trim($_POST['speakerSession'])."<br>";
-       echo $profile = trim($_POST['profile_text'])."<br>";
+       echo $name = trim($_POST['speakerName']);
+       echo $rank = trim($_POST['speakerRanks']);
+       echo $penary = trim($_POST['speakerSession']);
+       echo $profile = trim($_POST['profile_text']);
        
        
         //get and save speakers images
@@ -28,12 +28,12 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
           $target_path = "images/";
          echo $target_path = $target_path . basename( $_FILES["uploadedfile"]["name"]); 
 
-//        if(move_uploaded_file($_FILES['image']['tmp_name'], $target_path)) {
-//            echo "The file ".  basename( $_FILES['image']['name']). 
-//            " has been uploaded";
-//        } else{
-//            echo "There was an error uploading the file, please try again!";
-//        }
+        if(move_uploaded_file($_FILES['image']['tmp_name'], $target_path)) {
+            echo "The file ".  basename( $_FILES['image']['name']). 
+            " has been uploaded";
+        } else{
+            echo "There was an error uploading the file, please try again!";
+        }
          echo "9999999";
       }else{
          echo "not submit";
