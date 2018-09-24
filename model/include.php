@@ -7,4 +7,5 @@ include_once 'Auth.php';
 include_once 'Question.php';
 include_once 'excel_reader2.php';
 include_once 'ScoreBoard.php';
+include_once 'Speaker.php';
 
