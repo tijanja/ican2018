@@ -39,4 +39,15 @@ class Speaker extends Connection {
 //                    return "{'action':false}";
 //               }
     }
+    
+    function getAllSponsors()
+    {
+        $result = $this->db->query("SELECT * FROM sponsors;");
+        while($row = $result->fetch_assoc())
+        {
+            $speaker[] = $row;
+        }
+        
+        return $speaker;
+    }
 }
