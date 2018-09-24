@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 
 try
 {
-echo $obj1 = file_get_contents("php://input");
+$obj1 = file_get_contents("php://input");
 $obj = json_decode($obj1);
 $controller = ucfirst(strtolower(trim($obj->controller)));
 $action = strtolower(trim($obj->action))."Action";
