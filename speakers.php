@@ -39,8 +39,8 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
          echo "not submit";
          
       }
-      
-      if($db->query("INSERT INTO speakers VALUES('','$name','$target_path','$penary','$rank',$profile)"))
+      $res = $db->query("INSERT INTO speakers VALUES('','$name','$target_path','$penary','$rank',$profile,'')");
+      if($res)
        {
           echo "Success"; 
        }
