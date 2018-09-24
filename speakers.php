@@ -43,7 +43,8 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
        }
          echo "9999999";
       }else{
-         print_r($errors);
+         echo "not submit";
+         
       }
    }
 ?>
