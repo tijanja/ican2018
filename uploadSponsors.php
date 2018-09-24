@@ -1,6 +1,8 @@
 <?php
 include_once 'model/Connection.php';
 $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
+
+if(isset($_POST['image'])){
     $file_name = $_FILES['uploadedfile']['name'];
       $file_size =$_FILES['uploadedfile']['size'];
       $file_tmp =$_FILES['uploadedfile']['tmp_name'];
@@ -38,6 +40,10 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
          echo "not submit";
          
       }
+      }
+   else {
+           echo $db->error." errors10";
+       }
 
 ?>
 
