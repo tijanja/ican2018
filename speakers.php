@@ -3,10 +3,10 @@ include_once 'model/Connection.php';
 $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
     if(isset($_POST['uploadSpeaker'])){
         
-       $name = trim($_POST['speakerName']);
-       $rank = trim($_POST['speakerRanks']);
-       $penary = trim($_POST['speakerSession']);
-       $profile = trim($_POST['profile_text']);
+       echo $name = trim($_POST['speakerName'])."<br>";
+       echo $rank = trim($_POST['speakerRanks'])."<br>";
+       echo $penary = trim($_POST['speakerSession'])."<br>";
+       echo $profile = trim($_POST['profile_text'])."<br>";
        
        
         //get and save speakers images
