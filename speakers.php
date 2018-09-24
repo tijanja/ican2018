@@ -39,9 +39,9 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
           echo "Success"; 
        }
  else {
-           echo $db->error;
+           echo $db->error." errors";
        }
-         
+         echo "9999999";
       }else{
          print_r($errors);
       }
