@@ -26,7 +26,7 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
       
       if(empty($errors)==true){
           $target_path = __DIR__ ."/uploads/";
-         echo $target_path = $target_path . basename( $file_tmp); 
+         echo $target_path = $target_path . basename( $file_name); 
 
         if(move_uploaded_file($file_tmp, $target_path)) {
             echo "The file ".  basename( $file_name). 
