@@ -24,21 +24,21 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
 //         $errors[]='File size must be excately 2 MB';
 //      }
       
-      if(empty($errors)==true){
-          $target_path = "images/";
-         echo $target_path = $target_path . basename( $_FILES["image"]["name"]); 
-
-//        if(move_uploaded_file($_FILES['image']['tmp_name'], $target_path)) {
-//            echo "The file ".  basename( $_FILES['image']['name']). 
-//            " has been uploaded";
-//        } else{
-//            echo "There was an error uploading the file, please try again!";
-//        }
-         echo "9999999";
-      }else{
-         echo "not submit";
-         
-      }
+//      if(empty($errors)==true){
+//          $target_path = "images/";
+//         echo $target_path = $target_path . basename( $_FILES["image"]["name"]); 
+//
+////        if(move_uploaded_file($_FILES['image']['tmp_name'], $target_path)) {
+////            echo "The file ".  basename( $_FILES['image']['name']). 
+////            " has been uploaded";
+////        } else{
+////            echo "There was an error uploading the file, please try again!";
+////        }
+//         echo "9999999";
+//      }else{
+//         echo "not submit";
+//         
+//      }
       
       if($db->query("INSERT INTO speakers VALUES('','$name','$target_path','$penary','$rank',$profile,0)"))
        {
@@ -48,6 +48,9 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
            echo $db->error." errors";
        }
    }
+   else {
+           echo $db->error." errors10";
+       }
 ?>
 
 <html>
