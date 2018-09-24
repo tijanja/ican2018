@@ -16,7 +16,7 @@ $db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
       $file_size =$_FILES['uploadedfile']['size'];
       $file_tmp =$_FILES['uploadedfile']['tmp_name'];
       $file_type=$_FILES['uploadedfile']['type'];
-      $file_ext=strtolower(end(explode('.',$_FILES['uploadedfile']['name'])));
+      $file_ext=strtolower(end(explode('.',$file_name)));
       
 
       
