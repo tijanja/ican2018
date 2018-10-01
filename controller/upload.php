@@ -29,7 +29,7 @@ for($i=2;$i<619;$i++)
       $regId =  $db->real_escape_string(trim($xls->val($i, "E")));
       $memberid = $db->real_escape_string(trim($xls->val($i, "A")));
     
-    $db->query("INSERT INTO Members VALUES('','$memberid','$regId','$fName','$lName','','','')");
+    //$db->query("INSERT INTO Members VALUES('','$memberid','$regId','$fName','$lName','','','')");
     
     echo $fName.'<br>';
 }
