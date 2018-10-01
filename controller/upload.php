@@ -24,12 +24,14 @@ $xls = new Spreadsheet_Excel_Reader($file,false);
 for($i=2;$i<619;$i++)
 {
     
-    $lName = $db->real_escape_string(trim($xls->val($i, "C")));
-      $fName = $db->real_escape_string(trim($xls->val($i, "B")));
-      $regId =  $db->real_escape_string(trim($xls->val($i, "E")));
-      $memberid = $db->real_escape_string(trim($xls->val($i, "A")));
+    //$lName = $db->real_escape_string(trim($xls->val($i, "F")));
+      $fName = $db->real_escape_string(trim($xls->val($i, "E")));
+      $regId =  $db->real_escape_string(trim($xls->val($i, "B")));
+      $memberid = $db->real_escape_string(trim($xls->val($i, "D")));
+      $email = $db->real_escape_string(trim($xls->val($i, "F")));
+      $phone = $db->real_escape_string(trim($xls->val($i, "G")));
     
-    //$db->query("INSERT INTO Members VALUES('','$memberid','$regId','$fName','$lName','','','')");
+    $db->query("INSERT INTO Members VALUES('','$memberid','$regId','$fName','$lName','$email','$phone','')");
     
     echo $fName.'<br>';
 }
