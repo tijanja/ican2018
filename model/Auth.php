@@ -19,10 +19,10 @@ class Auth extends Connection{
     }
             function login($params) {
         
-        $username = ucwords($params->username);
+        //$username = ucwords($params->username);
         $password = ucwords($params->password);
          
-            $result = $this->db->query("select * from Members where memberId='$username' and registrationNum='$password'");
+            $result = $this->db->query("select * from Members where registrationNum='$password'");
            
             if($result->num_rows>0)
             {
