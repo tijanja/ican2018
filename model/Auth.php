@@ -33,7 +33,7 @@ class Auth extends Connection{
             }
            else
                {
-                    return "{'action':false}";
+                    return $return_res["action"]=FALSE;
                }
              
       
