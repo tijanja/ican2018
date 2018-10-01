@@ -34,6 +34,7 @@ class Auth extends Connection{
            else
                {
                     $return_res["action"] = FALSE;
+                    $return_res['data']="";
                     return json_encode($return_res);
                }
              
