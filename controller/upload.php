@@ -2,7 +2,7 @@
 include_once '../model/include.php';
 include_once '../model/excel_reader2.php';
 
-$db = new mysqli('localhost', 'root', 'Project123', 'ICAN');
+$db = new mysqli('localhost', 'root', 'Project123', 'ican2018');
         
         if($db->connect_errno > 0){
             die('Unable to connect to database [' . $db->connect_error . ']');
