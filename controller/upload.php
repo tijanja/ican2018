@@ -31,7 +31,7 @@ for($i=2;$i<619;$i++)
       $email = $db->real_escape_string(trim($xls->val($i, "F")));
       $phone = $db->real_escape_string(trim($xls->val($i, "G")));
     
-    $db->query("INSERT INTO Members VALUES('','$memberid','$regId','$fName','$lName','$email','$phone','')");
+    $db->query("INSERT INTO Members VALUES('','$memberid','$regId','$fName','$fName','$email','$phone','')");
     
     echo $fName.'<br>';
 }
