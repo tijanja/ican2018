@@ -105,7 +105,7 @@ class Question extends Connection
         $memberId = trim($p->memberId);
         echo $s = "SELECT numRight,numWrong FROM Members where memberId=".$memberId." limit 1;";
        $result = $this->db->query($s); 
-       echo $obj = $result->fetch_object(); 
+       $obj = $result->fetch_object(); 
        return $obj;
     }
 
