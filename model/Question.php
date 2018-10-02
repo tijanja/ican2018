@@ -112,7 +112,8 @@ class Question extends Connection
 
     private function getCorrectAnswer($questId)
     {
-        $result = $this->db->query("select answer as answer from question_table where id='$questId' limit 1;"); 
+        $s = "select answer as answer from question_table where id=".$questId." limit 1;";
+        $result = $this->db->query($s); 
         $obj = $result->fetch_object();
         return $obj->answer;
     }
