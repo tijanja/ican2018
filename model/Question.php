@@ -148,8 +148,8 @@ class Question extends Connection
        if($this->quizAnswered($param)<=50)
        {
             $response['action'] = TRUE;
-            //$response['rightWrong']= $this->getRightWrong($param);
-            //$response['nextQuest'] = $this->getQuestion($param);
+            $response['rightWrong']= $this->getRightWrong($param);
+            $response['nextQuest'] = $this->getQuestion($param);
             
              
         }
