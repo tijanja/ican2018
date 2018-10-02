@@ -105,7 +105,8 @@ class Question extends Connection
         $memberId = trim($p->memberId);
         
        $result = $this->db->query("SELECT numRight,numWrong FROM Members where memberId='$memberId' limit 1;"); 
-       return $result->fetch_object(); 
+       $obj = $result->fetch_object(); 
+       return $obj;
     }
 
 
@@ -123,7 +124,7 @@ class Question extends Connection
         {
             //print_r($param);
             $returns['action']=TRUE;
-            $returns['rightWrong']= json_encode($this->getRightWrong($param));
+            $returns['rightWrong']= $this->getRightWrong($param);
             $returns['totalAnswered'] = $totalAnswered;
             $returns['nextQuest'] = $this->getQuestion($param); 
         }
