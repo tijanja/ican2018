@@ -57,7 +57,8 @@ class Question extends Connection
     private function quizAnswered($param)
     {
         $memberId = trim($param->memberId);
-        $result = $this->db->query("SELECT * FROM question_answered where memberId='$memberId';");
+        $s = "SELECT * FROM question_answered where memberId=".$memberId.";";
+        $result = $this->db->query($s);
        $obj = $result->num_rows;
        return $obj;
         
