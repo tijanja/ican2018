@@ -123,7 +123,7 @@ class Question extends Connection
         {
             //print_r($param);
             $returns['action']=TRUE;
-            $returns['rightWrong']= $this->getRightWrong($param);
+            $returns['rightWrong']= json_encode($this->getRightWrong($param));
             $returns['totalAnswered'] = $totalAnswered;
             $returns['nextQuest'] = $this->getQuestion($param); 
         }
