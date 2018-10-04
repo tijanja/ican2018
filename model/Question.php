@@ -23,16 +23,18 @@ class Question extends Connection
        $result = $this->db->query("select * from question_table order by rand() limit 1"); 
        $obj = $result->fetch_object(); 
        
-       if($this->isQuestionAnswered($param,$obj->id) && $count<=50)
-       {
-           $count +=1;
-           return $this->getQuestion($param);
-       }
- else {
+//       if($this->isQuestionAnswered($param,$obj->id) && $count<=50)
+//       {
+//           $count +=1;
+//           return $this->getQuestion($param);
+//       }
+// else {
+//       
+//         
+//          return $obj;  
+//       }
        
-         
-          return $obj;  
-       }
+        return null;
         
     }
     
