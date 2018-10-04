@@ -106,7 +106,7 @@ class Question extends Connection
     private function getRightWrong($p)
     {
         $memberId = trim($p->memberId);
-        echo $s = "SELECT numRight,numWrong FROM Members where id=".$memberId." limit 1;";
+        $s = "SELECT numRight,numWrong FROM Members where id=".$memberId." limit 1;";
        $result = $this->db->query($s); 
        $obj = $result->fetch_object(); 
        return $obj;
