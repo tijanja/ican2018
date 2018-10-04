@@ -146,21 +146,21 @@ class Question extends Connection
     
     function updateQuestion($param)
     {
-        $this->submitAnswer($param);
-       if($this->quizAnswered($param)<=50)
-       {
-            $response['action'] = TRUE;
-            $response['rightWrong']= $this->getRightWrong($param);
-            $response['nextQuest'] = $this->getQuestion($param);
-            
-             
-        }
-        else
-        {
+//        $this->submitAnswer($param);
+//       if($this->quizAnswered($param)<=50)
+//       {
+//            $response['action'] = TRUE;
+//            $response['rightWrong']= $this->getRightWrong($param);
+//            $response['nextQuest'] = $this->getQuestion($param);
+//            
+//             
+//        }
+//        else
+//        {
             $response['action'] = FALSE;
-            $response['message'] = "You have completed your 50 questions.";
-        }
-        $this->db->close();
-        return $response;
+            $response['message'] = "You have completed all questions.";
+//        }
+//        $this->db->close();
+//        return $response;
     }
 }
