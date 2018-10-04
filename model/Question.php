@@ -98,7 +98,9 @@ class Question extends Connection
         $w = trim($wrong);
         $total = $r + $w;
         
-        $this->db->query("UPDATE Members set numRight='$r',numWrong='$w', totalAnswered='$total' where memberId='$m' limit 1;");
+        $s = "UPDATE Members set numRight=".$r.",numWrong="+$w+", totalAnswered="+$total+" where memberId="+$m+" limit 1;";
+        
+        $this->db->query($s);
     }
     
     private function getRightWrong($p)
