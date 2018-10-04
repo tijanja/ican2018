@@ -39,7 +39,7 @@ class Question extends Connection
     private function isQuestionAnswered($param,$questId)
     {
         $memberId = trim($param->memberId);
-        $result = $this->db->query("select count(id) as rows from question_answered where question_id='$questId' and memberId='$memberId';");
+        $result = $this->db->query("select count(id) as rows from question_answered where question_id='$questId' and id='$memberId';");
         $obj = $result->fetch_object();
         if($obj->rows<=50)
         {
@@ -57,7 +57,7 @@ class Question extends Connection
     private function quizAnswered($param)
     {
         $memberId = trim($param->memberId);
-        $s = "SELECT * FROM question_answered where memberId=".$memberId.";";
+        $s = "SELECT * FROM question_answered where id=".$memberId.";";
         $result = $this->db->query($s);
        $obj = $result->num_rows;
        return $obj;
@@ -106,7 +106,7 @@ class Question extends Connection
     private function getRightWrong($p)
     {
         $memberId = trim($p->memberId);
-        echo $s = "SELECT numRight,numWrong FROM Members where memberid=".$memberId." limit 1;";
+        echo $s = "SELECT numRight,numWrong FROM Members where id=".$memberId." limit 1;";
        $result = $this->db->query($s); 
        $obj = $result->fetch_object(); 
        return $obj;
