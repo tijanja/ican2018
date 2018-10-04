@@ -22,7 +22,7 @@ class Auth extends Connection{
         //$username = ucwords($params->username);
         $password = ucwords($params->password);
          
-            $result = $this->db->query("select * from Members where memberid='$password' or phone='$password' or email='$password';");
+            $result = $this->db->query("select * from Members where memberid='$password' or phone='$password' or email='$password' or registrationNum='$password';");
            
             if($result->num_rows>0)
             {
